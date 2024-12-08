@@ -1,5 +1,7 @@
 # Getting Started
 
+http://localhost:8081/swagger-ui/index.html
+
 ### Build with reference of youtube
 # [@LearnCodeWithDurgesh](https://www.youtube.com/@LearnCodeWithDurgesh)
 * [🔥Lets Start Creating User Microservice | Microservice Tutorial in Hindi](https://youtu.be/XDmDEzHDV8E?si=V8HVzqDshs6-JVsx)
