@@ -1,12 +1,10 @@
 package com.example.user.service.entities;
 
-import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Table
@@ -26,4 +24,7 @@ public class User {
     private String email;
     @Column
     private String about;
+
+    @Transient
+    private List<Rating> ratingList;
 }
