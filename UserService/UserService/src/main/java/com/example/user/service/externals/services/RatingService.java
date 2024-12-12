@@ -4,6 +4,7 @@ import com.example.user.service.entities.Rating;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -12,4 +13,7 @@ public interface RatingService {
 
     @GetMapping("/ratings/users/{userId}")
     List<Rating> getHotel(@PathVariable String userId);
+
+    @PostMapping("/ratings")
+    Rating createRating(Rating rating);
 }

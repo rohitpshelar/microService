@@ -1,7 +1,5 @@
 package com.example.user.service.services.impl;
 
-import com.example.user.service.entities.Hotel;
-import com.example.user.service.entities.Rating;
 import com.example.user.service.entities.User;
 import com.example.user.service.exceptions.ResourceNotFound;
 import com.example.user.service.externals.services.HotelService;
@@ -9,14 +7,12 @@ import com.example.user.service.externals.services.RatingService;
 import com.example.user.service.repositories.UserRepository;
 import com.example.user.service.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Service
 public class UserServiceImpl implements UserService {
