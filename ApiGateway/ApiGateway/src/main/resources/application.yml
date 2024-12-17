@@ -8,4 +8,13 @@ eureka:
   instance:
     hostname: ms_service_discovery
 
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: UserService
+          uri: lb://UserService
+          predicates:
+            - Path=/user/**
+
 
