@@ -3,6 +3,7 @@ package com.example.user.service.controllers;
 import com.example.user.service.entities.User;
 import com.example.user.service.services.UserService;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,7 +31,8 @@ public class UserController {
 
     @GetMapping("/{uid}")
 //    @CircuitBreaker(name = "ratingHotelBreaker", fallbackMethod = "ratingHotelFallback")
-    @Retry(name = "ratingHotelRetry", fallbackMethod = "ratingHotelRetryFallback")
+//    @Retry(name = "ratingHotelRetry", fallbackMethod = "ratingHotelRetryFallback")
+    @RateLimiter(name = "ratingHotelRateLimiter", fallbackMethod = "ratingHotelRateLimiterFallback")
     public ResponseEntity<User> getUser(@PathVariable String uid){
         logger.info("getUser is executed for Udrt Id : {}",uid);
         return ResponseEntity.ok(userService.getUser(uid));
@@ -46,6 +48,12 @@ public class UserController {
         logger.info("Retry Fallback is executed because service is down : {}",ex.getMessage());
         var user = User.builder().email("dummy").name("dummy").about("Created dummy as some service is down").uid("123").build();
         return ResponseEntity.ok(user);
+    }
+
+    public ResponseEntity<User> ratingHotelRateLimiterFallback(String uid, Exception ex){
+        logger.info("Rate Limiter Fallback is executed because request is above set limit : {}",ex.getMessage());
+        var user = User.builder().email("dummy").name("dummy").about("Created dummy as some service is down").uid("123").build();
+        return ResponseEntity.badRequest().body(user);
     }
 
     @GetMapping
