@@ -4,8 +4,56 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ApiGateway" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ApiGateway" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ConfigServer" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ConfigServer" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/HotelService" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/HotelService" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/RatingService" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/RatingService" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ServiceRegistry" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ServiceRegistry" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/User" />
         <option name="gradleHome" value="" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/UserService" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/UserService" />
+          </set>
+        </option>
       </GradleProjectSettings>
     </option>
   </component>
