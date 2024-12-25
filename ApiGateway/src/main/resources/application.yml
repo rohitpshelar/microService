@@ -1,0 +1,34 @@
+server:
+  port: 8084
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    hostname: ms_service_discovery
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: UserService
+          uri: lb://UserService
+          predicates:
+            - Path=/user/**
+        - id: HotelService
+          uri: lb://HotelService
+          predicates:
+            - Path=/hotels/**
+        - id: RatingService
+          uri: lb://RatingService
+          predicates:
+            - Path=/ratings/**
+
+okta:
+  oauth2:
+    issuer: https://dev-88020100.okta.com/oauth2/default
+    audience: api://default
+    client-id: 0oam18b26eaeiDdc55d7
+    client-secret: NEhi5MYJBivHvqX-wAl_YIZGeoxamEdnRNxFzTWSIskcEFSsNIHGCXzg8Gm2c6YW
+    scopes: openid, profile, email, offline_access

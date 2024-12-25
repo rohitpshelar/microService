@@ -1,9 +1,0 @@
-server:
-  port: 8083
-
-spring:
-  data:
-    mongodb:
-      uri: mongodb+srv://rohitpshelar:6CJTeZivuMldVRwI@microservice.bsacm.mongodb.net/?retryWrites=true&w=majority&appName=Microservice
-      port: 27017
-      database: RatingDB
